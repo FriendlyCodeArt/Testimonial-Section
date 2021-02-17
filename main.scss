@@ -1,0 +1,356 @@
+// Colors
+$moderate-violet: hsl(263, 55%, 52%);
+$very-dark-grayish-blue: hsl(217, 19%, 35%);
+$very-dark-blackish-blue: hsl(219, 29%, 14%);
+$white: hsl(0, 0%, 100%);
+
+// Neutrals Colors
+$light-gray: hsl(0, 0%, 81%);
+$light-grayish-blue: hsl(210, 46%, 95%);
+
+// Font Weights
+$fw500: 500;
+$fw600: 600;
+
+// Line Height
+$lh-big: 1.5;
+
+//
+
+// Media Queris
+
+$bp-large: 1080px;
+$bp-smal: 600px;
+$bp-smallest: 375px;
+
+// Global Reset
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.3rem;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+.page-wrap {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.testimonials {
+  min-height: 100vh;
+  display: grid;
+  align-content: center;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, max-content);
+  grid-template-areas:
+    "review-1 review-1 review-2  review-3"
+    "review-4 review-5 review-5 review-3";
+  grid-gap: 2rem;
+
+  @media only screen and (max-width: 1080px) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, max-content);
+    grid-template-areas:
+      "review-1 review-1 review-2 review-2"
+      "review-3 review-3 review-3 review-3"
+      "review-4 review-4 review-4 review-4"
+      "review-5 review-5 review-5 review-5";
+  }
+  @media only screen and (max-width: 600px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, max-content);
+    grid-template-areas:
+      "review-1"
+      "review-2"
+      "review-4 "
+      "review-5 "
+      "review-3";
+  }
+}
+.review-1 {
+  background-color: $moderate-violet;
+  padding: 4rem;
+  box-shadow: 0px 0px 35px 0px rgba(0, 0, 0, 0.39);
+  position: relative;
+  z-index: 10;
+  border-radius: 20px;
+  grid-area: review-1;
+
+  .review {
+    &__user {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    &__info {
+      margin-left: 2rem;
+    }
+
+    &__img {
+      height: 5rem;
+      width: 5rem;
+      border-radius: 50%;
+      border: 2px solid $light-gray;
+      overflow: hidden;
+    }
+
+    &__name {
+      color: $white;
+      font-weight: $fw600;
+      margin-bottom: 0.2rem;
+    }
+
+    &__verification {
+      color: $white;
+
+      font-weight: $fw500;
+    }
+
+    &__text {
+      margin-bottom: 2rem;
+      color: $white;
+    }
+
+    &__quote {
+      color: $white;
+      line-height: $lh-big;
+    }
+  }
+
+  &::before {
+    content: "\201C";
+    position: absolute;
+    top: -5rem;
+    right: 6rem;
+    font-size: 50rem;
+    font-family: sans-serif;
+    line-height: 1;
+    overflow: hidden;
+    z-index: -1;
+    color: $white;
+    opacity: 10%;
+  }
+}
+.review-2 {
+  background-color: $very-dark-grayish-blue;
+  padding: 4rem;
+  box-shadow: 0px 0px 35px 0px rgba(0, 0, 0, 0.39);
+  border-radius: 20px;
+
+  grid-area: review-2;
+
+  .review {
+    &__user {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    &__info {
+      margin-left: 2rem;
+    }
+
+    &__img {
+      height: 5rem;
+      width: 5rem;
+      border-radius: 50%;
+      border: 2px solid $light-gray;
+      overflow: hidden;
+    }
+
+    &__name {
+      color: $white;
+      font-weight: $fw600;
+      margin-bottom: 0.2rem;
+    }
+
+    &__verification {
+      color: $white;
+
+      font-weight: $fw500;
+    }
+
+    &__text {
+      margin-bottom: 2rem;
+      color: $white;
+    }
+
+    &__quote {
+      color: $white;
+
+      line-height: $lh-big;
+    }
+  }
+}
+.review-3 {
+  background-color: $white;
+  padding: 4rem;
+  box-shadow: 0px 0px 35px 0px rgba(0, 0, 0, 0.39);
+  border-radius: 20px;
+  width: 30rem;
+  grid-area: review-3;
+  @media only screen and (max-width: 1080px) {
+    width: 100%;
+  }
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+  }
+
+  .review {
+    &__user {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    &__info {
+      margin-left: 2rem;
+      color: $very-dark-grayish-blue;
+    }
+
+    &__img {
+      height: 5rem;
+      width: 5rem;
+      border-radius: 50%;
+      border: 2px solid $light-gray;
+      overflow: hidden;
+    }
+
+    &__name {
+      font-weight: $fw600;
+      margin-bottom: 0.2rem;
+    }
+
+    &__verification {
+      font-weight: $fw500;
+    }
+
+    &__text {
+      margin-bottom: 2rem;
+      color: $very-dark-grayish-blue;
+    }
+
+    &__quote {
+      line-height: $lh-big;
+      color: $very-dark-grayish-blue;
+    }
+  }
+}
+.review-4 {
+  background-color: $white;
+  padding: 4rem;
+  box-shadow: 0px 0px 35px 0px rgba(0, 0, 0, 0.39);
+  border-radius: 20px;
+  grid-area: review-4;
+
+  .review {
+    &__user {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    &__info {
+      margin-left: 2rem;
+      color: $very-dark-grayish-blue;
+    }
+
+    &__img {
+      height: 5rem;
+      width: 5rem;
+      border-radius: 50%;
+      border: 2px solid $light-gray;
+      overflow: hidden;
+    }
+
+    &__name {
+      font-weight: $fw600;
+      margin-bottom: 0.2rem;
+    }
+
+    &__verification {
+      font-weight: $fw500;
+    }
+
+    &__text {
+      margin-bottom: 2rem;
+      color: $very-dark-grayish-blue;
+    }
+
+    &__quote {
+      color: $very-dark-grayish-blue;
+
+      line-height: $lh-big;
+    }
+  }
+}
+.review-5 {
+  background-color: $very-dark-blackish-blue;
+  padding: 4rem;
+  box-shadow: 0px 0px 35px 0px rgba(0, 0, 0, 0.39);
+  border-radius: 20px;
+  grid-area: review-5;
+
+  .review {
+    &__user {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    &__info {
+      margin-left: 2rem;
+    }
+
+    &__img {
+      height: 5rem;
+      width: 5rem;
+      border-radius: 50%;
+      border: 2px solid $light-gray;
+      overflow: hidden;
+    }
+
+    &__name {
+      color: $white;
+      font-weight: $fw600;
+      margin-bottom: 0.2rem;
+    }
+
+    &__verification {
+      color: $white;
+
+      font-weight: $fw500;
+    }
+
+    &__text {
+      margin-bottom: 2rem;
+      color: $white;
+    }
+
+    &__quote {
+      color: $white;
+      line-height: $lh-big;
+    }
+  }
+}
+.attribution {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
